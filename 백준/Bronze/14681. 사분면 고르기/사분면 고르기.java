@@ -1,11 +1,11 @@
 import java.util.*;
-
+import java.io.*;
 public class Main
 {
-	public static void main(String[] args) {
-	    Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
-        int y = scanner.nextInt();
+	public static void main(String[] args) throws IOException {
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int x = Integer.parseInt(br.readLine());
+		int y = Integer.parseInt(br.readLine());
         
         Position position = new Position(x, y);
         
