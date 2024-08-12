@@ -7,6 +7,7 @@ public class Main
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();
         String[] arr = str.split(" ");
+        Arrays.sort(arr);
         
 		int x = Integer.parseInt(arr[0]);
 		int y = Integer.parseInt(arr[1]);
@@ -25,8 +26,8 @@ public class Main
             }
             
         } else {
-            int maxValue = Math.max(Math.max(x, y), z);
-            answer = maxValue * 100;
+            //int maxValue = Math.max(Math.max(x, y), z);
+            answer = z * 100;
         }
         
         System.out.println(answer);
