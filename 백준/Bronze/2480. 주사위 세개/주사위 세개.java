@@ -1,12 +1,16 @@
 import java.util.*;
+import java.io.*;
 
 public class Main
 {
-	public static void main(String[] args)  {
-		Scanner scanner = new Scanner(System.in);
-		int x = scanner.nextInt();
-		int y = scanner.nextInt();
-		int z = scanner.nextInt();
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+        String[] arr = str.split(" ");
+        
+		int x = Integer.parseInt(arr[0]);
+		int y = Integer.parseInt(arr[1]);
+		int z = Integer.parseInt(arr[2]);
 		
         int answer = 0;
         if(x == y || x == z || y == z) {
