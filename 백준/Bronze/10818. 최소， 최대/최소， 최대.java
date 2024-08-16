@@ -1,16 +1,24 @@
+
 import java.util.*;
+import java.io.*;
 
 public class Main
 {
-	public static void main(String[] args)  {
-		Scanner scanner = new Scanner(System.in);
-		int n = scanner.nextInt();
-		int[] arr = new int[n];
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int min = Integer.MAX_VALUE;
+		int max = Integer.MIN_VALUE;
 		for(int i=0; i<n; i++) {
-		    arr[i] = scanner.nextInt();
+		    int value = Integer.parseInt(st.nextToken());
+		    max = Math.max(value, max);
+		    min = Math.min(value, min);
+
 		}
-		Arrays.sort(arr);
-		System.out.println(arr[0] + " " + arr[n-1]);
+		
+		System.out.println(min + " " + max);
+
       
 	}
 }
