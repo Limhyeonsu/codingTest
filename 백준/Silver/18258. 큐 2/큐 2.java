@@ -11,18 +11,11 @@ public class Main
 		
 		Deque<Integer> queue = new ArrayDeque<>();
 		for(int i=0; i<n; i++) {
-		    String cmd = br.readLine();
-		    int input = 0;
-		    if(cmd.startsWith("push")) {
-		        StringTokenizer st = new StringTokenizer(cmd);
-                cmd = st.nextToken();
-                input = Integer.parseInt(st.nextToken());
-                
-		    }
-		  
+		    StringTokenizer st = new StringTokenizer(br.readLine());
+			String cmd = st.nextToken();
 		    
-		    if(cmd.equals("push")) {
-		        queue.offerFirst(input);
+		    if(st.hasMoreTokens()) {
+		        queue.offerFirst(Integer.parseInt(st.nextToken()));
 		    }
 		    else if(cmd.equals("pop")) {
 		        if(queue.isEmpty()){
