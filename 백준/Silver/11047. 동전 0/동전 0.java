@@ -18,18 +18,9 @@ public class Main
 		int sum = 0;
 		boolean bool = true;
 		for(int i: list) {
-		    while(bool) {
-		        if(sum == k) bool = false;
-		        if(i > k) break;
-		        else if(sum < k){
-		            answer++;
-		            sum += i;
-		        }else if(sum > k) {
-		            answer--;
-		            sum -= i;
-		            break;
-		        }
-		    }
+		   if(k == 0) break;
+		   answer += k/i;
+		   k = k%i;
 		}
 		
         System.out.println(answer);
