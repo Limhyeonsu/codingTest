@@ -5,23 +5,25 @@ public class Main
 	public static void main(String[] args)  {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
-		int[] streets = new int[n - 1];
-		int[] price = new int[n];
+		long[] streets = new long[n-1];
+		long[] price = new long[n];
 		for(int i=0; i<n-1; i++) {
-		    streets[i] = scanner.nextInt();
+		    streets[i] = scanner.nextLong();
 		}
-		price[0] = scanner.nextInt();
-		for(int i=1; i<n-1; i++) {
-		    int v = scanner.nextInt();
-		    if(price[i - 1] < v) price[i] = price[i - 1];
-		    else price[i] = v;
-		}
-		price[n - 1] = scanner.nextInt();
 		
-		int answer = 0;
-		for(int i=0; i<n-1; i++) {
-		    answer += price[i] * streets[i];
+		for(int i=0; i<n; i++) {
+		    price[i] = scanner.nextLong();
 		}
+	
+	    long minPrice = price[0];
+	    long answer = 0L;
+	    for(int i=0; i<n-1; i++) {
+		    if(minPrice > price[i]) minPrice = price[i];
+		    answer += (minPrice * streets[i]);
+		    
+		}
+		
+	
 		System.out.println(answer);
 		
 	}
